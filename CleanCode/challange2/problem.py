@@ -5,6 +5,7 @@ from pathlib import Path
 # allows creation of directories and files, storing and deleting
 # !! each created file must be found in a directory
 class DiskStorage:
+    
     def __init__(self, directory_name):
         self.storage_directory = directory_name
 
