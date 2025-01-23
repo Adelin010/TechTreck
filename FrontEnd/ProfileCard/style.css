@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*, *::after, *::before{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* vh, vw units = view height/width, units of the view window */
+/* 100vh = all height of the window */
+/* 
+    display: flex => flex box arrange all items in a vector like structure 
+    align-items: works on vertical axis for placement
+    justify-content: works on a horizontal axis for placement
+    !! the axis can ge reverted with flex-direction: column
+*/
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+
+.profile-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 370px;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-img{
+    display: block;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #4070f4;
+    padding: 3px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}   
+
+/* object-fit => used to controll how an image/video is resized to fit within its container */
+/* It maintains the aspect ration of the media */
+/* 
+    Properties: 
+    1) fill: default, streched to fill the container
+    2) contain: resized to fit container while maintaining the original aspect ration, entire content visible, yet there may be empty spaces
+    3) cover: fill container, preserve aspect ratio  => some clipping may be done
+    4) none: not resized, may lead to overflow
+    5) scale-down: scaled down, if not fits originally, to the smallest dimension between "none" and "contain"
+
+*/
+/* boder-radius: 50% => generates a circle */
+ .profile-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.profile-card .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+.text .name{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.text .job{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profile-card .media-buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.media-buttons .link{
+    text-decoration: none;
+    background-color: #4070f4;
+    height: 34px;
+    width: 34px;    
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    margin: 0 8px;
+    font-size: 18px;
+
+}
+
+.profile-card .buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+
+}
+
+.buttons .button{
+    margin: 0 10px;
+    padding: 8px 24px;
+    background-color: #4070f4;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    border:none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: hover 0.3s ease;
+}
+
+.buttons .button:hover{
+    background-color: #0e4bf1;
+}
