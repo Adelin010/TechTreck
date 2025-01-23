@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* color property will affect all the text inside the card */
+.section{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #121321;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    /* for 3D object that present a animation defines the distance from the observer to the animation */
+    /* a smaller values => more pronounced effect in front of the observer */
+    /* applied on the parent, affects all children that have 3D transformations */
+    perspective: 2000px;
+}
+
+/* 
+    Pseude-elements in css ::after and ::before are elements 
+    that enable the addtion of consmetic content around a node in the DOM
+*/
+.section::before{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(-150px, -100px);
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+
+}
+
+.section::after{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(150px, 100px);
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+
+}
+
+.container{
+    height: 225px;
+    width: 375px;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.6s ease-in-out;
+    /* used to not be flattend with their parent on a 2D plane, thus keeping their 3D characteristics */
+    /* preserve-3d ->  renders the children nodes in 3D space allowing for depth and perspective effects */
+    transform-style: preserve-3d;
+}
+
+.container:hover{
+    transform: rotateY(180deg);
+}
+
+/* backdrop applies the blur on the background of the element */
+.container .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    /* Glassy style */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* allow to hide the face that is rotated in 3D spaces so that is the back face of a 3D object */
+    backface-visibility: hidden;
+}
+
+.front header,
+.front .logo{
+    display: flex;
+    align-items: center;
+}
+
+.front header{
+    justify-content: space-between;
+}
+ 
+.front .logo img{
+    width: 48px;
+    margin-right: 10px;
+}
+
+.logo h5{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.front .chip{
+    width: 50px;
+
+}
+
+.front .card-details{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+h6{
+    font-size: 10px;
+    font-weight: 400;
+}
+h5.number{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+h5.name{
+    margin-top: 20px;
+}
+
+.back{
+    border: none;
+    padding: 15px 25px 25px 25px;
+    transform: rotateY(180deg);
+}
+
+.back h6{
+    font-size: 8px;   
+}
+
+.back .magnetic-strip{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 45px;
+    width: 100%;
+    background: #000;
+}
+
+.back .signature{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 80px;
+    height: 40px;
+    width: 85%;
+    border-radius: 6px;
+    background: repeating-linear-gradient(#fff, #fff 3px , #efefef 0px, #efefef 9px)
+}
+
+.signature i{
+    color: #000;
+    font-size: 12px;
+    margin-right: -30px;
+    background-color: #fff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.back h5{
+    font-size: 8px;
+    margin-top: 15px;
+}
