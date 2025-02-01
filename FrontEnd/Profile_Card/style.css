@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 *, *::after, *::before{
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -68,6 +67,8 @@ body{
 }
 
 .profile-card .text{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     display: flex;
     flex-direction: column;
     align-items: center;
