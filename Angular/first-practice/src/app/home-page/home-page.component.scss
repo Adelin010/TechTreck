@@ -1,0 +1,19 @@
+h1{
+    margin-bottom: .75rem;
+}
+
+.input-box{
+    margin-top: 1.25rem;
+    color: #444;
+    input{
+        padding: 6px;
+        font-size: 14px;
+        max-width: 300px;
+        margin-top: .25rem;
+        &:active, &:focus{
+            outline: none;
+        }
+    }
+    display: flex;
+    flex-flow: column;
+}

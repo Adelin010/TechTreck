@@ -1,0 +1,10 @@
+<section class="homepage">
+    <h1>Home Page!</h1>
+    <app-greeting [msg]="msg" [signalMsg]="signalMsg"/>
+
+    <div class="input-box">
+        <label for="message">Change the greeting</label>
+        <input type="text" name="message" id="message" placeholder="Enter message..." (keyup)="ChangeMsg($event)">    
+    </div>
+
+</section>
