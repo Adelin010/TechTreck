@@ -1,4 +1,7 @@
 #Folder 
 GenerativeAi/venv/
+**/node_modules/
+**/dist/
 
 #Files
+**/package.json
