@@ -14,13 +14,15 @@ export default class ServerObj{
             // equivalent 
             response.writeHead(500, {'content-type': 'application/json'})
             response.end(JSON.stringify({message: 'Server Error'}));
+            // console.log(request.url);
+            // console.log(request.method);
         });
         
     }
 
     call_listen(){
         // The callback function is executed right after listing 
-        const PORT = 8000
+        const PORT = process.env.PORT;
         this.server.listen(PORT, () => {
             console.log(`Server running on port ${PORT}`)
         });

@@ -1,4 +1,5 @@
 import ServerObj from './server.js'
+import App from './app.js'
 
 function run(): void {
     console.log("Start App...")
@@ -18,7 +19,14 @@ function run(): void {
 }
 
 // Use an IIFE to run the main code
-(function() {
-    const server = new ServerObj();
-    server.call_listen()
+// (function() {
+//     const server = new ServerObj();
+//     server.call_listen()
+// })();
+
+(function(){
+
+    const application = new App()
+    application.runServer()
+    console.log(application.infoPaths())
 })();
