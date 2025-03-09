@@ -4,5 +4,4 @@ GenerativeAi/venv/
 **/dist/
 
 #Files
-**/package.json
 **/.env
