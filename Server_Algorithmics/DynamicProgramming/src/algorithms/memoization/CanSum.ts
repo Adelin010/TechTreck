@@ -48,4 +48,8 @@ const canSumMemo = (target: number, arr: number[], memo: CanSumMemo= {}): boolea
     return false;
 }
 
+<<<<<<< HEAD
 export {canSum, canSumMemo};
+=======
+export {canSum, canSumMemo};
+>>>>>>> origin/main
